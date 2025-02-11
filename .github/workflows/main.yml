@@ -15,3 +15,7 @@ jobs :
       - name : hello world
         run : 
           echo "Hello world"
+      - name: Echo PR Comment
+        run: |
+          echo "PR Title: ${{ github.event.pull_request.title }}"
+          echo "PR Body: ${{ github.event.pull_request.body }}"

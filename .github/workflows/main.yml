@@ -1,0 +1,17 @@
+name : sample_act
+on : 
+  push : 
+    branches : ["main"]
+  pull_request : 
+    branches : ["main"]
+  workflow_dispatch : 
+jobs :
+  echo_hello_world :
+    runs-on : ubuntu-latest
+    timeout-minutes : 5
+    steps : 
+      - name: Check out the repository
+        uses: actions/checkout@v4
+      - name : hello world
+        run : 
+          echo "Hello world"
